@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.md\shell\ViewAsHTML]
+@="Convert and view as HTML"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.md\shell\ViewAsHTML\command]
+@="\"C:\\YOUR\\PATH\\TO\\pythonw.exe\" \"C:\\YOUR\\PATH\\TO\\md2html.py\" \"%1\""
