@@ -107,9 +107,15 @@ def convert(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    # Using 'toc' extra to generate a table of contents
+    # Using 'toc' extra with depth=4 to only include H1-H4 in the Table of Contents
     # markdown2 returns a 'UnicodeWithAttributes' object which has a 'toc_html' attribute
-    html_output = markdown2.markdown(text, extras=["fenced-code-blocks", "tables", "gfm", "task_list", "toc"])
+    html_output = markdown2.markdown(text, extras={
+        "fenced-code-blocks": None,
+        "tables": None,
+        "gfm": None,
+        "task_list": None,
+        "toc": {"depth": 4}
+    })
     
     toc_html = html_output.toc_html
     if toc_html:
